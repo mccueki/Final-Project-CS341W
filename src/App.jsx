@@ -1,32 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+import { Link, Routes, Route } from "react-router-dom"
+import { Home } from "./pages/Home.jsx"
+import { Balance } from "./pages/Balance.jsx"
 
 function App() {
 
   return (
     <>
-      <div>
-      My balance
-        $921.48
-
-        Spending - Last 7 days
-
-        mon
-        tue
-        wed
-        thu
-        fri
-        sat
-        sun
-
-        Total this month
-        $478.33
-
-        +2.4%
-        from last month
-      </div>
-      
-    </>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/balance">Balance</Link>
+        </li>
+     </ul>
+    </nav>
+    <Routes>
+       <Route path="/" element={ <Home/>} />
+       <Route path="/balance" element={ <Balance/>} />
+    </Routes>
+  </>
   )
 }
 
